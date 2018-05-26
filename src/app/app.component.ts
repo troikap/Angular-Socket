@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import * as io from 'socket.io-client';
+import {enableProdMode} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  socket;
+
+  constructor() {
+    this.socket = io();
+  }
 }
